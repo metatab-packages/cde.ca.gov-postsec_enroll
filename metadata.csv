@@ -1,0 +1,84 @@
+Declare,metatab-latest
+Title,Post-Secondary Enrollment
+Description,Downloadable data about the College-Going Rate (CGR) for California high school
+Description,"completers disaggregated by race/ethnicity, student group, and academic year."
+Identifier,4e18892f-1032-4fe9-adb1-8e831d20d839
+Name,cde.ca.gov-postsec_enroll-1.2.3
+Dataset,postsec_enroll
+Origin,cde.ca.gov
+Time,
+Space,
+Grain,
+Variant,
+Version,1.2.3
+Version.Major,1
+Version.Minor,2
+Version.Patch,3
+Created,2021-05-19T19:52:08
+Modified,2022-06-10T16:54:24
+Giturl,https://github.com/metatab-packages/cde.ca.gov-collection.git
+License,Unknown
+
+Section,Contacts,Email,Organization,,,,,,Url
+Wrangler,Eric Busboom,eric@civicknowledge.com,Civic Knowledge,,,,,,http://civicknowledge.com
+Origin,Data Reporting Office,dro@cde.ca.gov,California Department of Education,,,,,,https://www.cde.ca.gov
+
+Section,Documentation,Title,Description,,,,,,
+Documentation,file:README.md,README,,,,,,,
+Homepage,https://www.cde.ca.gov/ds/ad/pse.asp,Home Page,,,,,,,
+Documentation,https://www.cde.ca.gov/ds/ad/cgrinfo.asp,College-Going Rate,"High-level overview of the CGR data sources, DataQuest reports, downloadable files, definitions, and rules helpful to understanding the CGR data reports and downloadable data files.",,,,,,
+Documentation,https://www.cde.ca.gov/ds/ad/usingcgr.asp,Using the CGR Data File,This page explains how to effectively use the sub-setting variables included in this CGR data file to obtain the desired counts.,,,,,,
+Downloadpage,https://www.cde.ca.gov/ds/ad/filescgr12.asp,,,,,,,,
+Datadictionary,https://www.cde.ca.gov/ds/ad/fscgr12.asp,Data Dictionary,Field descriptions for the 12 month file,,,,,,
+Downloadpage,https://www.cde.ca.gov/ds/ad/filescgr16.asp,,,,,,,,
+Datadictionary,https://www.cde.ca.gov/ds/ad/fscgr16.asp,Data Dictionary,Field descriptions for the 16 month file,,,,,,
+
+Section,References,Name,Description,Year,Group,,,,
+Reference,https://www3.cde.ca.gov/demo-downloads/cgr/cgr12mo18.txt#target_format=tsv,cgr12mo18,12 Month CGR 2018,2018,12,,,,
+Reference,https://www3.cde.ca.gov/demo-downloads/cgr/cgr12mo17.txt#target_format=tsv,cgr12mo17,12 Month CGR 2017,2017,12,,,,
+Reference,https://www3.cde.ca.gov/demo-downloads/cgr/cgr12mo16.txt#target_format=tsv,cgr12mo16,12 Month CGR 2016,2016,12,,,,
+Reference,https://www3.cde.ca.gov/demo-downloads/cgr/cgr12mo15.txt#target_format=tsv,cgr12mo15,12 Month CGR 2015,2015,12,,,,
+Reference,https://www3.cde.ca.gov/demo-downloads/cgr/cgr16mo17.txt#target_format=tsv,cgr16mo17,16 Month CGR 2017,2017,16,,,,
+Reference,https://www3.cde.ca.gov/demo-downloads/cgr/cgr16mo16.txt#target_format=tsv,cgr16mo16,16 Month CGR 2016,2016,16,,,,
+Reference,https://www3.cde.ca.gov/demo-downloads/cgr/cgr16mo15.txt#target_format=tsv,cgr16mo15,16 Month CGR 2015,2015,16,,,,
+
+Section,Resources,Name,Description,,,,,,
+Datafile,notebooks/extract.ipynb#cgr,cgr,College Going Rate,,,,,,
+
+Section,Schema,DataType,AltName,Description,
+Table,cgr,,,,
+Table.Column,AcademicYear,string,academicyear,The academic year corresponding to year of high school graduation or completion.,
+Table.Column,AggregateLevel,string,aggregatelevel,"C=County S=School, D=District T=State",
+Table.Column,CountyCode,number,countycode,A unique two-digit code corresponding to the county.,
+Table.Column,DistrictCode,number,districtcode,A unique five-digit code corresponding to the district.,
+Table.Column,SchoolCode,number,schoolcode,A unique seven-digit code corresponding to the school.,
+Table.Column,CountyName,string,countyname,County name.,
+Table.Column,DistrictName,string,districtname,District or Administrative Authority Name.,
+Table.Column,SchoolName,string,schoolname,School name.,
+Table.Column,CharterSchool,string,charterschool,"An indicator of whether data for all schools, only charter schools, or only non-charter schools are included. NOTE: One of these values must be chosen to obtain an unduplicated count at the selected level. All = Includes data for all schools regardless of charter status. For Aggregate Level=S, all schools are included. For Aggregate Levels T, C, and D, data for all schools are included in the aggregate. Y = Includes only data for charter schools. For Aggregate Level=S, only charter schools are included. For Aggregate Levels T, C, and D, only data for charter schools are included in the aggregate. N = Includes only data for non-charter schools. For Aggregate Level=S, only non-charter schools are included. For Aggregate Levels T, C, and D, only data for non-charter schools are included in the aggregate.",
+Table.Column,AlternativeSchoolAccountabilityStatus,string,asas,"An indicator of whether data for all schools, only schools participating in the Dashboard Alternative School Status Program (DASS) or previously the Alternative School Accountability Model (ASAM), or only non-DASS or non-ASAM schools are included. NOTE: One of these values must be chosen to obtain an unduplicated count at the selected level. All = Includes data for all schools regardless of ASAS status. For Aggregate Level=S, all schools are included. For Aggregate Levels T, C, and D, data for all schools are included in the aggregate. Y  = Includes only data for schools participating in ASAS. For Aggregate Level=S, only ASAS schools are included. For Aggregate Levels T, C, and D, only data for ASAS schools are included in the aggregate. N  = Includes only data for non-ASAS schools. For Aggregate Level=S, only data for non-ASAS schools are included. For Aggregate Levels T, C, and D, only data for non-ASAS schools are included in the aggregate.",
+Table.Column,ReportingCategory,string,reportingcategory,"An indicator of the student group reporting category (race/ethnicity, gender, or program subgroup) disaggregation or subset. NOTE: Select Reporting Category = TA for aggregate totals without consideration of a Reporting Category student group. RB = African American RI = American Indian or Alaska Native RA = Asian RF = Filipino RH = Hispanic or Latino RD = Not Reported RP = Pacific Islander RT = Two or More Races RW = White GM = Male GF = Female SE = English Learners SD = Students with Disabilities SS = Socioeconomically Disadvantaged SM = Migrant SF = Foster SH = Homeless TA = Total (all high school completers).",
+Table.Column,CompleterType,string,completertype,AGY = Count of graduates meeting a-g requirements for admission into a University of California (UC) or California State University (CSU) school. AGN = Count of graduates not meeting a-g requirements for admission into a UC or CSU school. NGC = Count of non-graduate completers not meeting a-g requirements for admission into a UC or CSU school. TA = Total (all high school completers).,
+Table.Column,High School Completers,number,high_school_completers,"The number of students who graduated from a California public high school with a regular high school diploma or who otherwise successfully finished high school as a non-graduate completer during the reporting period for the associated academic year (8/16/Year 1 to 8/15/Year 2), including summer graduates and non-graduate completers, regardless of when the students first entered grade 9. For the purpose of calculating the College-Going Rate (CGR), the following types graduates and non-graduate completers are included: regular high school diploma graduates, California High School Proficiency Exam (CHSPE) completers, General Education Development (GED) completers, and adult education high school diploma graduates. Please note, for the purposes of calculating the CGR, students who received a Special Education Certificate of Completion during the reporting period are not included.",
+Table.Column,Enrolled In College - Total (12 Months),number,in_college_total_12m,"The total number of California public high school completers who enrolled in any postsecondary institution within 16 months of completing high school. Postsecondary institutions include 2-year and 4-year, public and private postsecondary institutions, both in-state and out-of-state as determined through student-level data matches with the National Student Clearinghouse, which receives postsecondary enrollment and completion information from colleges and universities.",
+Table.Column,College Going Rate - Total (12 Months),number,cgr_12m,The total percentage of California public high school completers who enrolled in any public or private postsecondary institution (in-state or out-of-state) within 16 months of completing high school.,
+Table.Column,Enrolled In-State (12 Months),number,in_12m,The number of California public high school completers who enrolled in a public or private postsecondary institution inside California within 16 months of completing high school.,
+Table.Column,Enrolled Out-of-State (12 Months),number,out_12m,The number of California public high school completers who enrolled in a public or private postsecondary institution outside California within 16 months of completing high school.,
+Table.Column,Not Enrolled In College (12 Months),number,not_enr_12m,"The number of California public high school completers (1) who did not enroll in a public or private postsecondary institution inside or outside California within 12 or 16 months of completing high school or (2) whose postsecondary educational directory information records were blocked from being shared by the student or institution pursuant to privacy rights outlined in the Family Educational Rights and Privacy Act (FERPA). Analysis conducted by the National Student Clearinghouse (NSC) shows that California’s average block rate was 11 percent over 2012–13, 2014–15, and 2016–17. Additional information about directory information blocks and block rates by institution and state can be found on the NSC website at Working With Our Data under the ""FERPA Implications for Researchers"" section.",
+Table.Column,Enrolled UC (12 Months),number,uc_12m,The number of California public high school completers who enrolled in the University of California system within 16 months completing high school.,
+Table.Column,Enrolled CSU (12 Months),number,csu_12m,The number California public high school completers who enrolled in the California State University system within 16 months of completing high school.,
+Table.Column,Enrolled CCC (12 Months),number,ccc_12m,The number California public high school completers who enrolled in the California Community College (CCC) system within 16 months of completing high school.,
+Table.Column,Enrolled In-State Private (2 and 4 Year) (12 Months),number,in_private_24y_12m,The number of California public high school completers who enrolled in a private California 2- or 4-year institution within 16 months of completing high school.,
+Table.Column,Enrolled Out-of-State 4-Year College (Public/Private) (12 Months),number,out_4ypp_12m,The number of California public high school completers who enrolled in an out-of-state (public/private) 4-year postsecondary institution within 16 months completing high school.,
+Table.Column,Enrolled Out-of-State 2-Year College (Public/Private) (12 Months),number,out_2ypp_12m,The number California public high school completers who enrolled in an out-of-state (public/private) 2-year postsecondary institution within 16 months completing high school.,
+Table.Column,Enrolled In College - Total (16 Months),number,in_college_total_16m,"The total number of California public high school completers who enrolled in any postsecondary institution within 16 months of completing high school. Postsecondary institutions include 2-year and 4-year, public and private postsecondary institutions, both in-state and out-of-state as determined through student-level data matches with the National Student Clearinghouse, which receives postsecondary enrollment and completion information from colleges and universities.",
+Table.Column,College Going Rate - Total (16 Months),number,cgr_16m,The total percentage of California public high school completers who enrolled in any public or private postsecondary institution (in-state or out-of-state) within 16 months of completing high school.,
+Table.Column,Enrolled In-State (16 Months),number,in_16m,The number of California public high school completers who enrolled in a public or private postsecondary institution inside California within 16 months of completing high school.,
+Table.Column,Enrolled Out-of-State (16 Months),number,out_16m,The number of California public high school completers who enrolled in a public or private postsecondary institution outside California within 16 months of completing high school.,
+Table.Column,Not Enrolled In College (16 Months),number,not_enr_16m,"The number of California public high school completers (1) who did not enroll in a public or private postsecondary institution inside or outside California within 12 or 16 months of completing high school or (2) whose postsecondary educational directory information records were blocked from being shared by the student or institution pursuant to privacy rights outlined in the Family Educational Rights and Privacy Act (FERPA). Analysis conducted by the National Student Clearinghouse (NSC) shows that California’s average block rate was 11 percent over 2012–13, 2014–15, and 2016–17. Additional information about directory information blocks and block rates by institution and state can be found on the NSC website at Working With Our Data under the ""FERPA Implications for Researchers"" section.",
+Table.Column,Enrolled UC (16 Months),number,uc_16m,The number of California public high school completers who enrolled in the University of California system within 16 months completing high school.,
+Table.Column,Enrolled CSU (16 Months),number,csu_16m,The number California public high school completers who enrolled in the California State University system within 16 months of completing high school.,
+Table.Column,Enrolled CCC (16 Months),number,ccc_16m,The number California public high school completers who enrolled in the California Community College (CCC) system within 16 months of completing high school.,
+Table.Column,Enrolled In-State Private (2 and 4 Year) (16 Months),number,in_private_24y_16m,The number of California public high school completers who enrolled in a private California 2- or 4-year institution within 16 months of completing high school.,
+Table.Column,Enrolled Out-of-State 4-Year College (Public/Private) (16 Months),number,out_4ypp_16m,The number of California public high school completers who enrolled in an out-of-state (public/private) 4-year postsecondary institution within 16 months completing high school.,
+Table.Column,Enrolled Out-of-State 2-Year College (Public/Private) (16 Months),number,out_2ypp_16m,The number California public high school completers who enrolled in an out-of-state (public/private) 2-year postsecondary institution within 16 months completing high school.,
