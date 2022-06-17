@@ -15,14 +15,14 @@ Version.Major,1
 Version.Minor,2
 Version.Patch,3
 Created,2021-05-19T19:52:08
-Modified,2022-06-10T16:54:24
-Giturl,https://github.com/metatab-packages/cde.ca.gov-collection.git
+Modified,2022-06-17T17:11:30
+Giturl,https://github.com/metatab-packages/cde.ca.gov-postsec_enroll.git
 License,Unknown
-
+""
 Section,Contacts,Email,Organization,,,,,,Url
 Wrangler,Eric Busboom,eric@civicknowledge.com,Civic Knowledge,,,,,,http://civicknowledge.com
 Origin,Data Reporting Office,dro@cde.ca.gov,California Department of Education,,,,,,https://www.cde.ca.gov
-
+""
 Section,Documentation,Title,Description,,,,,,
 Documentation,file:README.md,README,,,,,,,
 Homepage,https://www.cde.ca.gov/ds/ad/pse.asp,Home Page,,,,,,,
@@ -32,7 +32,7 @@ Downloadpage,https://www.cde.ca.gov/ds/ad/filescgr12.asp,,,,,,,,
 Datadictionary,https://www.cde.ca.gov/ds/ad/fscgr12.asp,Data Dictionary,Field descriptions for the 12 month file,,,,,,
 Downloadpage,https://www.cde.ca.gov/ds/ad/filescgr16.asp,,,,,,,,
 Datadictionary,https://www.cde.ca.gov/ds/ad/fscgr16.asp,Data Dictionary,Field descriptions for the 16 month file,,,,,,
-
+""
 Section,References,Name,Description,Year,Group,,,,
 Reference,https://www3.cde.ca.gov/demo-downloads/cgr/cgr12mo18.txt#target_format=tsv,cgr12mo18,12 Month CGR 2018,2018,12,,,,
 Reference,https://www3.cde.ca.gov/demo-downloads/cgr/cgr12mo17.txt#target_format=tsv,cgr12mo17,12 Month CGR 2017,2017,12,,,,
@@ -41,10 +41,10 @@ Reference,https://www3.cde.ca.gov/demo-downloads/cgr/cgr12mo15.txt#target_format
 Reference,https://www3.cde.ca.gov/demo-downloads/cgr/cgr16mo17.txt#target_format=tsv,cgr16mo17,16 Month CGR 2017,2017,16,,,,
 Reference,https://www3.cde.ca.gov/demo-downloads/cgr/cgr16mo16.txt#target_format=tsv,cgr16mo16,16 Month CGR 2016,2016,16,,,,
 Reference,https://www3.cde.ca.gov/demo-downloads/cgr/cgr16mo15.txt#target_format=tsv,cgr16mo15,16 Month CGR 2015,2015,16,,,,
-
+""
 Section,Resources,Name,Description,,,,,,
 Datafile,notebooks/extract.ipynb#cgr,cgr,College Going Rate,,,,,,
-
+""
 Section,Schema,DataType,AltName,Description,
 Table,cgr,,,,
 Table.Column,AcademicYear,string,academicyear,The academic year corresponding to year of high school graduation or completion.,
